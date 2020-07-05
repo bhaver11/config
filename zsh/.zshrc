@@ -119,7 +119,7 @@ a src='source ~/.zshrc'
 a penv='source test_env/bin/activate'
 a pmr='python3 manage.py runserver'
 a pmi='python3 manage.py migrate'
-a pmk='python3 manage.py makemigration'
+a pmk='python3 manage.py makemigrations'
 a mtp='cd ~/Desktop/MTP'
 a sqre='cd ~/Desktop/MTP/sqre/secure_question_bank'
 a pp='cd ~/Desktop/placement-portal'
@@ -130,6 +130,7 @@ a adbd='adb devices'
 a adbtcp='adb tcpip 5555'
 a adbc='adb connec'
 a save="echo 'Saving config to github' && cd ~/Desktop/config && cp ~/.zshrc zsh/ && ga . && gc -m 'autosave' && gpsh origin master && cd -"
+a pref='pdflatex seminar_report.tex && biber seminar_report.bcf && pdflatex seminar_report.tex && pdflatex seminar_report.tex'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 quote
