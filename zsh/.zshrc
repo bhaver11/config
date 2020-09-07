@@ -4,6 +4,7 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -14,13 +15,13 @@ export ZSH="/home/bhavesh/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -41,7 +42,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -72,14 +73,17 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# plugins=(git)
 plugins=(git rand-quote colorize colored-man-pages zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 ZSH_COLORIZE_STYLE="colorful"
+
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -105,6 +109,7 @@ ZSH_COLORIZE_STYLE="colorful"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 alias a='alias'
 a startvpn='sudo systemctl start openvpn@iitbvpn.service'
 a stopvpn='sudo systemctl stop openvpn@iitbvpn.service'
@@ -119,7 +124,7 @@ a src='source ~/.zshrc'
 a penv='source test_env/bin/activate'
 a pmr='python3 manage.py runserver'
 a pmi='python3 manage.py migrate'
-a pmk='python3 manage.py makemigrations'
+a pmk='python3 manage.py makemigration'
 a mtp='cd ~/Desktop/MTP'
 a sqre='cd ~/Desktop/MTP/sqre/secure_question_bank'
 a pp='cd ~/Desktop/placement-portal'
@@ -130,7 +135,8 @@ a adbd='adb devices'
 a adbtcp='adb tcpip 5555'
 a adbc='adb connec'
 a save="echo 'Saving config to github' && cd ~/Desktop/config && cp ~/.zshrc zsh/ && ga . && gc -m 'autosave' && gpsh origin master && cd -"
-a pref='pdflatex seminar_report.tex && biber seminar_report.bcf && pdflatex seminar_report.tex && pdflatex seminar_report.tex'
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 quote
