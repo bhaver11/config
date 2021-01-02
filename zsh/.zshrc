@@ -121,7 +121,7 @@ a gco='git checkout'
 a gpl='git pull'
 a gpsh='git push'
 a src='source ~/.zshrc'
-a penv='source test_env/bin/activate'
+a penv='source testLinux/bin/activate'
 a pmr='python3 manage.py runserver'
 a pmi='python3 manage.py migrate'
 a pmk='python3 manage.py makemigration'
@@ -135,6 +135,7 @@ a adbd='adb devices'
 a adbtcp='adb tcpip 5555'
 a adbc='adb connec'
 a save="echo 'Saving config to github' && cd ~/Desktop/config && cp ~/.zshrc zsh/ && ga . && gc -m 'autosave' && gpsh origin master && cd -"
+a open='nautilus'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
